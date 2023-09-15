@@ -19,9 +19,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');   //bawa view welcome.blade
-});
+Route::get('/', function () {
+    return view('dashboard');   //bawa view dashboard
+}) ->name('custom.home');
 
 
 // Route::get('/product', function () {
@@ -31,6 +31,11 @@ Route::get('/dashboard', function () {
 Route::get('/product', [ProductController::class,'index'])->name ('product.index');
 Route::get('/product/create', [ProductController::class,'create'])->name ('product.create');
 Route::post('/product/store', [ProductController::class,'store'])->name ('product.store');
+Route::delete('/products/{product}', [ProductController::class,'destroy'])->name('products.destroy');
+Route::get('/products/{id}/edit', [ProductController::class,'edit'])->name('products.edit');
+Route::put('products/{product}', [ProductController::class,'update'])->name('products.update');
+// Route::post('/products/update', [ProductController::class,'update'])->name ('products.update');
+
 
 // Auth::routes();
 
