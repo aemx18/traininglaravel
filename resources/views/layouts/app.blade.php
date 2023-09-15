@@ -69,7 +69,7 @@
                         @endguest
 
         <li class="nav-item">
-           <a class="nav-link" href="{{ url(route('product.index')) }}">Home</a>
+           <a class="nav-link" href="{{ url(route('custom.home')) }}">Home</a>
         </li>
                                 
                         

@@ -39,7 +39,23 @@
         <td>{{ $product->desc }}</td>
         <td>RM {{ $product->price }}</td>
         <td>{{$product->stock}} Units</td>
-        <td></td>
+        <td>
+          {{-- Edit --}}
+          <form method="POST" action="{{ route('products.edit', $product->id)}}">
+            @csrf
+            @method('PUT')
+          <a class="btn btn-warning"> <i class="bi bi-pencil-square "></i></a>
+          </form>
+          {{-- End Edit --}}
+          
+          {{-- Delete --}}
+          <form method="POST" action="{{ route('products.destroy', $product->id) }}" onsubmit="return confirm('Are you sure you want to delete this product?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger"> <i class="bi bi-trash3-fill"></i></button>
+        </form>
+        
+        </td>
       </tr>
       <tr>
         @empty

@@ -18,7 +18,7 @@
     </div>
     <div class="mb-3">
         <label for="desc" class="form-label">Product Description</label>
-        <input type="text" class="form-control @error('desc') is-invalid @enderror" id="desc" name="desc">
+        <textarea type="text" class="form-control @error('desc') is-invalid @enderror" id="desc" name="desc"></textarea>
   
         @error('desc')
         <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
@@ -43,7 +43,7 @@
 
   
   
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary ">Submit</button>
   </form>
 @endsection
 
